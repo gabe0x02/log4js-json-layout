@@ -26,9 +26,9 @@
     "test": "vows"
   },  
   "dependencies": {
-    "log4js-node": "https://github.com/gabe0x02/log4js-node.git"
   },
   "devDependencies": {
+    "log4js-node": "https://github.com/gabe0x02/log4js-node.git",
     "vows": "0.7.0"
   },
   "browser": {
