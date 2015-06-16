@@ -1,0 +1,37 @@
+{
+  "name": "log4js-json-layout",
+  "version": "0.0.1",
+  "description": "A layout for log4js to output lines of json",
+  "keywords": [
+    "logging",
+    "log",
+    "log4j",
+    "node",
+    "json"
+  ],
+  "license": "Apache-2.0",
+  "main": "./layout",
+  "author": "Gabriel Littman  <gabe0x02@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabe0x02/log4js-json-layout.git"
+  },
+  "bugs": {
+    "url": "http://github.com/gabe0x02/log4js-json-layout/issues"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "vows"
+  },  
+  "dependencies": {
+    "log4js-node": "https://github.com/gabe0x02/log4js-node.git"
+  },
+  "devDependencies": {
+    "vows": "0.7.0"
+  },
+  "browser": {
+    "os": false
+  }
+}
