@@ -1,6 +1,6 @@
 {
   "name": "log4js-json-layout",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A layout for log4js to output lines of json",
   "keywords": [
     "logging",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "vows"
-  },  
+  },
   "dependencies": {
     "sprintf-js": "1.0.*"
   },
