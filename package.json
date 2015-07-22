@@ -26,7 +26,8 @@
     "test": "vows"
   },  
   "dependencies": {
-    "log4js-node": "https://github.com/gabe0x02/log4js-node.git"
+    "log4js-node": "https://github.com/gabe0x02/log4js-node.git",
+    "sprintf-js": "1.0.*"
   },
   "devDependencies": {
     "vows": "0.7.0"

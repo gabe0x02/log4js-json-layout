@@ -1,4 +1,5 @@
 var layouts = require('log4js').layouts;
+var sprintf = require("sprintf-js").sprintf;
 
 layouts.addLayout('json', function(){//config){ (ignore config for now)
   return function(loggingEvent) {
@@ -8,6 +9,19 @@ layouts.addLayout('json', function(){//config){ (ignore config for now)
       category: loggingEvent.categoryName,
       data: loggingEvent.data
     };
-    return JSON.stringify(to_json);
+    try {
+      if(Array.isArray(to_json.data)) {
+        var count = (to_json.data[0].match(/%/g) || []).length;
+        count -= (to_json.data[0].match(/%%/g) || []).length*2;
+        var params = to_json.data.splice(0, count+1);           
+        var str = sprintf.apply(this, params);
+        to_json.data.splice(0, 0, str);
+      }
+      
+      
+      return JSON.stringify(to_json);
+    } catch (e) {
+      return JSON.stringify(["ERROR CONVERTING LOG MESSAGE TO JSON;", e.message]);
+    }
   };
 });
