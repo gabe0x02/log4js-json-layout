@@ -36,6 +36,25 @@ vows.describe('JSON layout').addBatch({
           var log = JSON.parse(json);
           assert.deepEqual(log.data, ["  <-- POST /api/v2/tree 100%", "good times"]);
           assert.equal(log.level, "DEBUG");
-        }        
+        },        
+        'should handle objects correctly': function (layouts) {
+          var serializer = layouts.layout('json');
+          var json = serializer({data: [{test:"this"}], level: {levelStr: "DEBUG"}});
+          assert.ok(json);
+          var log = JSON.parse(json);
+          assert.deepEqual(log.data, [{test: "this"}]);
+          assert.equal(log.level, "DEBUG");          
+        },
+        'should handle circular objects reasonably': function (layouts) {
+          var serializer = layouts.layout('json');
+          var data = [{test:"this"}]
+          data.push(data);
+          var json = serializer({data: data, level: {levelStr: "DEBUG"}});
+          assert.ok(json);
+          var log = JSON.parse(json);
+          assert.deepEqual(log.data, [{test: "this"}, '[Circular ~.data]']);
+          assert.equal(log.level, "DEBUG");          
+        }
+        
       }        
 }).run();
