@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "json-stringify-safe": "^5.0.1",
-    "sprintfjs": "^1.1.9"
+    "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
     "log4js-node": "https://github.com/gabe0x02/log4js-node.git",
