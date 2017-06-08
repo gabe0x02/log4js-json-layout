@@ -1,6 +1,6 @@
 {
   "name": "log4js-json-layout",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A layout for log4js to output lines of json",
   "keywords": [
     "logging",
@@ -20,17 +20,17 @@
     "url": "http://github.com/gabe0x02/log4js-json-layout/issues"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=6.11.0"
   },
   "scripts": {
-    "test": "vows"
+    "test": "node test/layout.js"
   },
   "dependencies": {
     "json-stringify-safe": "^5.0.1",
     "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
-    "log4js-node": "https://github.com/gabe0x02/log4js-node.git",
+    "log4js": "1.1.1",
     "vows": "0.7.0"
   },
   "browser": {
